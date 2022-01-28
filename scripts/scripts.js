@@ -442,10 +442,12 @@ export function buildAutoBlocks() {
  */
 export function decorateMain() {
   const main = document.querySelector('main');
-  decorateAnchors(main);
-  buildAutoBlocks(main);
-  decorateSections(main);
-  decorateBlocks(main);
+  if (main) {
+    decorateAnchors(main);
+    buildAutoBlocks(main);
+    decorateSections(main);
+    decorateBlocks(main);
+  }
 }
 
 /**
@@ -463,13 +465,15 @@ async function loadEager() {
 async function loadLazy(doc) {
   const header = doc.querySelector('header > div');
   const main = document.querySelector('main');
-  loadBlocks(main);
+  if (main) {
+    loadBlocks(main);
 
-  decorateBlock(header);
-  loadBlock(header);
+    decorateBlock(header);
+    loadBlock(header);
 
-  loadStyle('/fonts/fonts.css');
-  addFavIcon(`${window.hlx.codeBasePath}/img/icon.svg`);
+    loadStyle('/fonts/fonts.css');
+    addFavIcon(`${window.hlx.codeBasePath}/img/icon.svg`);
+  }
 }
 
 /**
