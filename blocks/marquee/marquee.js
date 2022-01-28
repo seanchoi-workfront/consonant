@@ -13,11 +13,12 @@ function decorateButtons(el) {
 }
 
 function decorateText(el) {
-  const heading = el.querySelector('h1, h2, h3, h4, h5, h6');
-  heading.classList.add('heading-XL');
-  heading.nextElementSibling.classList.add('body-M');
-  if (heading.previousElementSibling) {
-    heading.previousElementSibling.classList.add('detail-M');
+  const headings = el.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  const title = headings[headings.length - 1];
+  title.classList.add('heading-XL');
+  title.nextElementSibling.classList.add('body-M');
+  if (title.previousElementSibling) {
+    headings[0].classList.add('detail-M');
   }
 }
 
