@@ -17,6 +17,10 @@
     min-height: 700px;
 }
 
+.marquee.centered {
+    text-align: center;
+}
+
 .marquee .background picture {
     display: block;
     position: absolute;
@@ -43,6 +47,10 @@
     flex: 0 0 calc(50% - calc(var(--grid-mobile-column-width) / 2));
 }
 
+.marquee.quiet .foreground > div {
+    flex: 0 0 100%;
+}
+
 .marquee .text .detail-M {
     margin-bottom: 16px;
 }
@@ -62,10 +70,11 @@
 .marquee .text .action-area {
     display: flex;
     margin: 0 0 24px 0;
+    gap: 24px;
 }
 
-.marquee .text .action-area > a:first-child {
-    margin-right: 24px;
+.marquee.quiet.centered .action-area {
+    justify-content: center;
 }
 
 .marquee .image img {
