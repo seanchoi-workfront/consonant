@@ -16,6 +16,7 @@ function decorateText(el) {
   const headings = el.querySelectorAll('h1, h2, h3, h4, h5, h6');
   const title = headings[headings.length - 1];
   title.classList.add('heading-XL');
+  console.log(title.previousElementSibling);
   title.nextElementSibling.classList.add('body-M');
   if (headings.length > 1) {
     headings[0].classList.add('detail-M');
