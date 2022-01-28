@@ -29,13 +29,12 @@ export default function init(el) {
     children[0].classList.add('background');
   }
   foreground.classList.add('foreground', 'container');
-
   const text = foreground.querySelector('h1, h2, h3, h4, h5, h6').closest('div');
   text.classList.add('text');
-
   const image = foreground.querySelector(':scope > div:not([class])');
-  image.classList.add('image');
-
+  if (image) {
+    image.classList.add('image');
+  }
   decorateButtons(text);
   decorateText(text);
 }
